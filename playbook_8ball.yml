@@ -1,0 +1,12 @@
+# test lookup_plugin 8ball
+- hosts: localhost
+  gather_facts: false
+  connection: local
+
+  vars:
+    answer: "{{ lookup('8ball') }}"
+
+  tasks:
+    - name: Display 8ball response
+      debug:
+        msg: "{{ answer }}"
